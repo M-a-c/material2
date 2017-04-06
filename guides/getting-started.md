@@ -125,6 +125,9 @@ System.config({
 });
 ```
 
+## TsConfig
+when using types in the tsconfig, TypeScript is not able to detect types
+
 
 ## Sample Angular Material projects
 - [Material Sample App](https://github.com/jelbourn/material2-app)
