@@ -36,6 +36,8 @@ module.exports = function docsPrivateFilter() {
 function isPublicDoc(doc) {
   if (hasDocsPrivateTag(doc)) {
     return false;
+  } else if(isTODO(doc)) {
+    return false; 
   } else if (doc.docType === 'member') {
     return !isInternalMember(doc);
   } else if (doc.docType === 'class') {
@@ -52,4 +54,9 @@ function isInternalMember(memberDoc) {
 function hasDocsPrivateTag(doc) {
   let tags = doc.tags && doc.tags.tags;
   return tags ? tags.find(d => d.tagName == 'docs-private') : false;
+}
+
+function isTODO(doc) {
+  let re = /.*TODO.*)/i;
+  return found = !doc.returns.match(re);
 }
